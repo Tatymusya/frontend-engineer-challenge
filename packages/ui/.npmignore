@@ -1,0 +1,11 @@
+node_modules
+dist
+.storybook
+src
+*.config.ts
+*.config.js
+tsconfig.json
+tsconfig.build.json
+.npmrc
+debug-storybook.log
+*.log

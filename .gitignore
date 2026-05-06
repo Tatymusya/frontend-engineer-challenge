@@ -1,0 +1,28 @@
+# Общие
+node_modules
+dist
+*.local
+.DS_Store
+*.log
+.cache/
+
+# Monorepo
+.turbo/
+packages/ui/node_modules
+apps/*/node_modules
+
+# Storybook
+*storybook.log
+storybook-static
+
+# Локальные env-файлы
+.env
+.env.production
+*.local
+.env.local
+apps/*/.env
+apps/*/*.local
+
+# Test coverage
+coverage/
+.nyc_output/

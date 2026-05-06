@@ -1,0 +1,16 @@
+{
+  "entryPoints": ["src/entities/user/index.ts"],
+  "out": "docs",
+  "name": "User Entity API",
+  "readme": "none",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "categorizeByGroup": true,
+  "sort": ["kind"],
+  "hideGenerator": true,
+  "visibilityFilters": {
+    "protected": false,
+    "private": false
+  },
+  "theme": "default"
+}

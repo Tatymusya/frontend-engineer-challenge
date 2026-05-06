@@ -1,116 +1,116 @@
-# Advanced Frontend Engineer Challenge
+# My Auth Monorepo
 
-Искренне благодарим вас за время и внимание к этому челленджу и надеемся на долгосрочную совместную командную работу
+A Vue 3 + TypeScript monorepo authentication application built with Turborepo.
 
-Подписывайтесь на канал с новыми челленджами: [@atls_challenges](https://t.me/atls_challenges)
+## Structure
 
-Не забудьте сперва поставить Star. Спасибо!
+```
+my-auth-monorepo/
+├── apps/
+│   └── auth/                → Vue 3 + Vite application (FSD architecture)
+│       └── src/
+│           ├── app/         → App initialization, router, global styles
+│           ├── pages/       → Pages (Home, Login)
+│           ├── features/    → Features (auth feature)
+│           ├── entities/    → Entities (user entity)
+│           ├── widgets/     → Widgets (layouts)
+│           ├── mock-server/ → Mock server for tests
+│           └── shared/      → Shared UI, lib, utils
+├── packages/
+│   └── ui/                  → @company/ui component library with Storybook
+├── package.json
+├── turbo.json
+└── tsconfig.base.json
+```
 
-Этот репозиторий — инженерный челлендж для кандидатов на frontend позиции
+## Getting Started
 
-Задача узкая по продукту и широкая по инженерным решениям: нам важно увидеть не только верстку, а умение проектировать клиентскую часть под реальный backend
+### Prerequisites
 
-## Контекст
+- Node.js >= 18.0.0
+- pnpm >= 8.15.3
 
-Вам нужно взять любой понравившийся fork [backend/fullstack-челленджа](https://github.com/atls-academy/engineer-challenge) и реализовать под него frontend для 3 сценариев:
-1. Регистрация
-2. Авторизация
-3. Восстановление пароля
+### Installation
 
-Дизайн остается тем же: [Figma-файл Orbitto Service](https://www.figma.com/design/31KetUbya482vMSGgyiNIf/Orbitto-%7C-Service--Copy-?node-id=102-12806&t=TMlkJ3c3j3vJF5fb-4)
-Файл доступен для создания копии в ваш workspace, но права на редактирование исходного файла не выдаются
-Запросы на доступ к редактированию исходного файла не рассматриваются
+```bash
+pnpm install
+```
 
-## Что важно
+### Development
 
-Решение должно демонстрировать инженерную зрелость:
-- Декомпозиция интерфейса и переиспользуемость компонентов
-- Управление состоянием и асинхронными сценариями
-- Работа с контрактами backend (ошибки, edge-cases, нестабильные ответы)
-- Доступность (a11y), UX-состояния и производительность
-- Осознанная аргументация trade-offs
+Run all applications in development mode:
 
-`Просто сверстать макет` не считается целевым уровнем решения для этого челленджа
+```bash
+pnpm run dev
+```
 
-## Обязательные требования
+This will start:
 
-1. UI и UX
-- Реализуйте все экраны и состояния auth-флоу по дизайну
-- Обработайте loading/error/empty/success-состояния
-- Обеспечьте адаптивность минимум для desktop и mobile
+- Auth Frontend at http://localhost:3000
+- Storybook at http://localhost:6006
 
-2. Интеграция с backend
-- Подключитесь к выбранному fork и его контрактам
-- Обработайте реальные ответы сервиса, включая неуспешные сценарии
-- Зафиксируйте в README предположения по контрактам
+### Build
 
-3. Архитектура frontend
-- Покажите структуру слоев/модулей и границы ответственности
-- Избегайте проекта в формате `все в одном components/ и services/`
-- Опишите ключевые инженерные решения в README
+Build all applications and packages:
 
-4. Качество и надежность
-- Добавьте тесты критичных пользовательских сценариев (unit/integration/e2e — на ваш выбор)
-- Добавьте базовую защиту от типичных UX-проблем (повторные отправки, race conditions, устаревшие запросы)
+```bash
+pnpm run build
+```
 
-5. Технологические решения
-- Фреймворк и стек выбираете самостоятельно
-- Ограничений по стеку нет: React, Vue, Angular, Svelte, WASM и любые другие варианты
-- В README обязательно объясните выбор и альтернативы, которые рассматривали
+### Storybook
 
-## Ограничения и анти-паттерны
+Run Storybook to view and test components:
 
-Следующие подходы считаются слабым решением:
-- Визуальный клон без инженерной структуры
-- Игнорирование неуспешных ответов и ошибок backend
-- Локальные хаки без объяснения trade-offs и последствий
-- Полная завязка на конкретный фреймворк без аргументации
+```bash
+pnpm run storybook
+```
 
-## Что нужно сдать
+### Lint (Oxlint)
 
-1. Исходный код frontend в вашем fork
-2. Обновленный README в вашем fork с:
-- как запустить проект
-- явной ссылкой на выбранный backend fork
-- как устроена архитектура frontend
-- какие trade-offs были приняты
-- что бы вы сделали следующим шагом в production-версии
-- ссылкой на демо или скринкаст основных сценариев (если есть)
-3. Набор тестов и инструкции по запуску
+Lint all code:
 
-## Формат выполнения
+```bash
+pnpm run lint
+```
 
-1. Выберите backend fork, с которым хотите работать
-2. Сделайте fork этого репозитория
-3. Реализуйте frontend-решение под выбранный backend
-4. Оформите результат в README
-5. Отправьте в отклике:
-- ссылку на ваш frontend fork
-- ссылку на `moodboard`
-- ссылку на `anti-moodboard`
+### Format
 
-## Использование ИИ
+Format all code with Oxlint:
 
-- Использование ИИ-инструментов в рамках челленджа разрешено
-- Если используете ИИ, добавьте в ваш fork папку `.agents`, чтобы было видно, как вы строили процесс решения
+```bash
+pnpm run format
+```
 
-## Критерии оценки
+## Tech Stack
 
-1. Качество архитектуры frontend и управляемость кода
-2. Корректность auth-флоу и интеграции с backend
-3. Качество UX-состояний, обработки ошибок и адаптивности
-4. Тестируемость и надежность ключевых сценариев
-5. Ясность инженерной аргументации в README
+- **Vue 3** - Progressive JavaScript framework
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Fast build tool
+- **Turborepo** - High-performance build system
+- **Pinia** - Vue state management
+- **Vue Router** - Official router for Vue.js
+- **Storybook** - Component development environment
 
-## Бонусные сигналы
+## Packages
 
-- Продуманная мини-дизайн-система или слой UI-kit внутри решения
-- Стратегия типизации контрактов (например, codegen/typed clients)
-- Базовая наблюдаемость фронта (telemetry/error tracking) с аргументацией, где это уместно
-- Использование микрофронтов, если это уместно и инженерно оправдано
-- Использование FSD с аргументацией границ и композиции слоев
-- Следование SOLID в архитектуре клиентской части
+### @my-auth/auth
 
-## Важно
+The main authentication frontend application built with FSD (Feature-Sliced Design) architecture:
 
-Нас интересует не идеальный пиксель-перфект любой ценой, а качество инженерного мышления и способность строить устойчивый frontend под реальный backend
+- **app/** - Application initialization, global router and styles
+- **pages/** - Page components (HomePage, LoginPage)
+- **features/** - Feature modules (authentication feature)
+- **entities/** - Business entities (user entity with store)
+- **shared/** - Shared reusable components and utilities
+
+### @company/ui
+
+Shared UI component library with:
+
+- Button component (primary, secondary, outline variants)
+- Input component (with validation support)
+- Card component (with header, body, footer slots)
+
+## License
+
+MIT

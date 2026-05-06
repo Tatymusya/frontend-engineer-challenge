@@ -1,0 +1,16 @@
+@import 'modern-normalize';
+@import 'fonts.css';
+@import 'themes.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    font-family: system-ui, -apple-system, sans-serif;
+}

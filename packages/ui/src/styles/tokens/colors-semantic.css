@@ -1,0 +1,55 @@
+@import 'colors-base.css';
+:root {
+    /** States **/
+    --color-error: var(--hex-D23939-color);
+    --color-success: var(--hex-31A0F0-color);
+
+    /** Text **/
+    --color-text-primary: var(--hex-1F1F27-color);
+    --color-text-secondary: var(--hex-81869A-color);
+    --color-text-tertiary: var(--hex-C0C2CB-color);
+
+    /** Link **/
+    --color-link: var(--hex-1F1F27-color);
+    --color-link-hover: var(--hex-1990E5-color);
+    --color-link-press: var(--hex-148ADF-color);
+    --color-link-disabled: var(--hex-C0C2CB-color);
+    --color-link-secondary: var(--hex-C0C2CB-color);
+    --color-link-secondary-hover: var(--hex-1990E5-color);
+    --color-link-secondary-press: var(--hex-148ADF-color);
+    --color-link-secondary-disabled: var(--hex-C0C2CB-color);
+
+    /** Background **/
+    --color-bg-surface: var(--hex-FFFFFF-color);
+
+    /** Interactive **/
+    /* primary */
+    --color-button-primary: var(--hex-31A0F0-color);
+    --color-button-primary-hover: var(--hex-1990E5-color);
+    --color-button-primary-active: var(--hex-148ADF-color);
+    --color-button-primary-disabled: var(--hex-C0C2CB-color);
+    --color-button-primary-text: var(--hex-FFFFFF-color);
+
+    /* secondary */
+    --color-button-secondary: var(--hex-31A0F0-opacity-1A-color);
+    --color-button-secondary-hover: var(--hex-31A0F0-opacity-26-color);
+    --color-button-secondary-active: var(--hex-31A0F0-opacity-33-color);
+    --color-button-secondary-disabled: var(--hex-C0C2CB-opacity-26-color);
+    --color-button-secondary-text: var(--hex-31A0F0-color);
+    --color-button-secondary-text-disabled: var(--hex-C0C2CB-color);
+
+    /** Input **/
+    --color-border-infold: var(--hex-1F1F27-opacity-29-color);
+    --color-border-infold-valid: var(--hex-31A0F0-color);
+    --color-infold-disabled: var(--hex-1F1F27-opacity-0D-color);
+    --color-infold-disabled-border: var(--hex-1F1F27-opacity-14-color);
+    --color-infold-disabled-field: var(--hex-f3f4f6-color);
+    --color-border-infold-label-text: var(--hex-81869A-color);
+
+    /** Borders **/
+    --color-border-default: var(--hex-1F1F27-opacity-14-color);
+
+    /** Skeleton **/
+    --color-skeleton: var(--hex-1F1F27-opacity-0D-color);
+    --color-skeleton-animated: var(--hex-FFFFFF-opacity-40-color);
+}

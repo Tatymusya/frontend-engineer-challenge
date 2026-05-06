@@ -1,0 +1,84 @@
+{
+  "name": "@tatymusaeva/orbitto",
+  "version": "1.0.9",
+  "description": "UI Kit for Orbitto Design System",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "ui",
+    "design-system",
+    "vue",
+    "components"
+  ],
+  "homepage": "https://github.com/Tatymusya/frontend-engineer-challenge.git#readme",
+  "bugs": {
+    "url": "https://github.com/Tatymusya/frontend-engineer-challenge.git/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tatymusya/frontend-engineer-challenge.git"
+  },
+  "license": "MIT",
+  "author": "Tatyana Musaeva <tatykolcova1234@yandex.ru>",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./styles": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css",
+      "default": "./dist/style.css"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css",
+      "default": "./dist/style.css"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vue-tsc -p tsconfig.build.json",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.6.14",
+    "@storybook/addon-docs": "^8.6.14",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/addon-onboarding": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/test": "^8.6.14",
+    "@storybook/vue3": "^8.6.14",
+    "@storybook/vue3-vite": "^8.6.14",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "modern-normalize": "^3.0.1",
+    "playwright": "^1.59.1",
+    "rollup-plugin-copy": "^3.5.0",
+    "storybook": "^8.6.14",
+    "typescript": "^5.4.0",
+    "vite": "^5.0.0",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vitest": "^4.1.3",
+    "vue-tsc": "^2.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  }
+}

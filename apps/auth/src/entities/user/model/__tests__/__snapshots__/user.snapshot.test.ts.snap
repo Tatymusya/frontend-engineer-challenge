@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`User (snapshot) > creates user with minimal data 1`] = `
+User {
+  "data": {
+    "createdAt": "2025-07-02T13:57:04.233Z",
+    "email": "Jeremiah72@yahoo.com",
+    "firstName": null,
+    "id": "e52399fa-babf-4014-8acd-fbab757bfac2",
+    "isEmailVerified": false,
+    "lastActiveAt": null,
+    "lastName": null,
+    "phone": undefined,
+    "role": "user",
+  },
+}
+`;

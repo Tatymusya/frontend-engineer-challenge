@@ -1,0 +1,35 @@
+{
+  "Vue Component with Docs": {
+    "prefix": "vuedoc",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "/**",
+      " * $1",
+	    " * @values 'val1' | 'val2' | 'val3'",
+      " * @default 'val1'",
+      " *",
+      " * @example",
+      " * <${TM_FILENAME_BASE} />",
+      " */",
+      " defineProps<{",
+      " /** ",
+      " * Вариант отображения ",
+      " * @values 'primary' | 'outline' | 'ghost'",
+      " * @default 'primary'",
+      " */",
+      " variant?: 'primary' | 'outline' | 'ghost'",
+      "}>()",
+      "</script>",
+      "",
+      "<template>",
+      "  <div class=\"${TM_FILENAME_BASE/([^.]*)/$1/}\">",
+      "    $2",
+      "  </div>",
+      "</template>",
+      "",
+      "<style scoped>",
+      "</style>"
+    ],
+    "description": "Vue SFC with JSDoc"
+  }
+}

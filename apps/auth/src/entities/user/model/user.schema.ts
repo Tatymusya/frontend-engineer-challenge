@@ -40,7 +40,7 @@ export const userSchema = z.object({
   isAuthenticated: z.boolean().default(false),
 });
 
-export const changePasswordSchema = z.object({
+export const passwordSchema = z.object({
   password: z
   .string()
   .min(
@@ -50,35 +50,17 @@ export const changePasswordSchema = z.object({
   .max(
     VALIDATION_LIMITS.MAX_PASSWORD_LENGTH,
     { message: VALIDATION_MESSAGES.PASSWORD_MAX_LENGTH(VALIDATION_LIMITS.MAX_PASSWORD_LENGTH)}
-  ),
-  newPassword: z
-  .string()
-  .min(
-    VALIDATION_LIMITS.MIN_PASSWORD_LENGTH,
-    { message: VALIDATION_MESSAGES.PASSWORD_MIN_LENGTH(VALIDATION_LIMITS.MIN_PASSWORD_LENGTH)}
-  )
-  .max(
-    VALIDATION_LIMITS.MAX_PASSWORD_LENGTH,
-    { message: VALIDATION_MESSAGES.PASSWORD_MAX_LENGTH(VALIDATION_LIMITS.MAX_PASSWORD_LENGTH)}
   )
   .regex(
     VALIDATION_VERIFICATION_PATTERNS.PASSWORD_VERIFICATION_PATTERN,
     { message: VALIDATION_MESSAGES.INVALID_PASSWORD }
   ),
-  confirmNewPassword: z
-  .string()
-  .min(
-    VALIDATION_LIMITS.MIN_PASSWORD_LENGTH,
-    { message: VALIDATION_MESSAGES.PASSWORD_MIN_LENGTH(VALIDATION_LIMITS.MIN_PASSWORD_LENGTH)}
-  )
-  .max(
-    VALIDATION_LIMITS.MAX_PASSWORD_LENGTH,
-    { message: VALIDATION_MESSAGES.PASSWORD_MAX_LENGTH(VALIDATION_LIMITS.MAX_PASSWORD_LENGTH)}
-  )
-  .regex(
-    VALIDATION_VERIFICATION_PATTERNS.PASSWORD_VERIFICATION_PATTERN,
-    { message: VALIDATION_MESSAGES.INVALID_PASSWORD }
-  ),
+});
+
+export const changePasswordSchema = z.object({
+  password: passwordSchema.shape.password,
+  newPassword: passwordSchema.shape.password,
+  confirmNewPassword: passwordSchema.shape.password,
 }).refine((data) => data.newPassword === data.confirmNewPassword, {
   message: VALIDATION_MESSAGES.PASSWORDS_MISMATCH,
   path: ["confirmNewPassword"],
